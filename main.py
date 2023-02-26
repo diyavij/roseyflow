@@ -15,7 +15,7 @@ def moreinfo():
 def aboutus():
   return render_template("aboutus.html")
 
-@app.route('/home', methods=['GET'])
+@app.route('/submit', methods=['GET','POST'])
 def submit():
     fname = request.form['fname']
     lname = request.form['lname']
@@ -28,7 +28,6 @@ def submit():
     row.to_csv('csv/users.csv', mode='a')
 
     return render_template('base.html')
-
 
 
 if __name__ == "__main__":
